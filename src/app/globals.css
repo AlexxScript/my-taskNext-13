@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --color-input: #97979766;
+    --color-focus-input: rgba(91, 162, 197, 0.644);
+}
+
+input{
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-input);
+    padding: 7px;
+    border-radius: 8px;
+    transition-duration: 2s;
+}
+
+input:focus{
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-focus-input);
+    transition-duration: 2s;
+}
+
+textarea{
+    padding: 7px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-input);
+    resize: none;
+    border-radius: 8px;
+    transition-duration: 2s;
+}
+
+textarea:focus{
+    border-color: var(--color-focus-input);
+    transition-duration: 2s;
+}
+
+.taskContainer{
+    grid-template-columns: 10% 70% 15% 15%;
+    grid-template-rows: auto;
+    grid-template-areas: "title description delete update";
+}
