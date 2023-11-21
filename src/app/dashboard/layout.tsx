@@ -1,3 +1,4 @@
+import NavDashboard from "@/components/NavDashboard";
 import Navbar from "@/components/Navbar";
 import SessionAuthProvider from "@/context/SessionAuthProvider";
 
@@ -9,7 +10,14 @@ const LayoutDashboard = ({ children }: InterfaceDashboard) => {
     return (
         <>
             <SessionAuthProvider>
-                {children}
+                <div className="dashboard grid gap-2">
+                    <div className="navDash [grid-area:menu] h-screen w-[25%] fixed">
+                        <NavDashboard />
+                    </div>
+                    <div className="[grid-area:template]">
+                        {children}
+                    </div>
+                </div>
             </SessionAuthProvider>
         </>
     );

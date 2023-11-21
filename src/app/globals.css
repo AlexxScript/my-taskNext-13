@@ -2,63 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    --color-font: #ECEBF3;
-    --color-input: #97979766;
-    --color-focus-input: rgba(91, 162, 197, 0.644);
-    --color-bg-body: #1e1530;
+:root {
+  --color-font: #ECEBF3;
+  --color-input: #97979766;
+  --color-focus-input: rgba(91, 162, 197, 0.644);
+  --color-bg-body: #1e1530;
+  --color-navdash: #3c324e;
 }
 
 @layer base {
-    h1 {
-      @apply text-xl font-bold;
-    }
-    h2 {
-      @apply text-xl font-bold;
-    }
-    h3 {
-      @apply text-lg font-bold;
-    }
+  h1 {
+    @apply text-xl font-bold;
   }
 
-body{
-    background: var(--color-bg-body);
-    color: var(--color-font);
+  h2 {
+    @apply text-xl font-bold;
+  }
+
+  h3 {
+    @apply text-lg font-bold;
+  }
 }
 
-input{
-    border-style: solid;
-    border-width: 2px;
-    border-color: var(--color-input);
-    padding: 7px;
-    border-radius: 8px;
-    transition-duration: 2s;
+body {
+  background: var(--color-bg-body);
+  color: var(--color-font);
 }
 
-input:focus{
-    border-style: solid;
-    border-width: 2px;
-    border-color: var(--color-focus-input);
-    transition-duration: 2s;
+input {
+  border-style: solid;
+  border-width: 2px;
+  color: var(--color-font);
+  border-color: var(--color-input);
+  padding: 7px;
+  border-radius: 8px;
+  transition-duration: 2s;
 }
 
-textarea{
-    padding: 7px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: var(--color-input);
-    resize: none;
-    border-radius: 8px;
-    transition-duration: 2s;
+input:focus {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color-focus-input);
+  transition-duration: 2s;
 }
 
-textarea:focus{
-    border-color: var(--color-focus-input);
-    transition-duration: 2s;
+textarea {
+  padding: 7px;
+  border-style: solid;
+  border-width: 2px;
+  color: var(--color-font);
+  border-color: var(--color-input);
+  resize: none;
+  border-radius: 8px;
+  transition-duration: 2s;
 }
 
-.taskContainer{
-    grid-template-columns: 20% 50% 15% 15%;
-    grid-template-rows: auto;
-    grid-template-areas: "title description edit delete";
+textarea:focus {
+  border-color: var(--color-focus-input);
+  transition-duration: 2s;
+}
+
+.taskContainer {
+  grid-template-columns: 20% 50% 15% 15%;
+  grid-template-rows: auto;
+  grid-template-areas: "title description edit delete";
+  gap: 10px;
+}
+
+.taskContainerForm {
+  grid-template-columns: 20% 50% 30%;
+  grid-template-rows: auto;
+  grid-template-areas: "title description create";
+  gap: 10px;
+}
+
+
+.dashboard{
+  grid-template-columns: 25% 75%;
+  grid-template-rows: auto;
+  grid-template-areas: "menu template";
+}
+
+.navDash{
+  background: var(--color-navdash);
 }

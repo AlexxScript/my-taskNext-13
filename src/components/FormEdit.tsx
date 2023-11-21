@@ -1,20 +1,32 @@
-"use client";
+"use client"
 
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-const FormCreate = () => {
+interface EditTask {
+    id_task: string;
+    title: string;
+    description: string;
+}
+
+interface TaskProp {
+    props: EditTask;
+}
+
+const FormEdit = ({ props }: TaskProp) => {
+
+    const router = useRouter()
 
     const [fields, setFields] = useState({
-        title: "",
-        description: ""
-    })
+        title: props.title,
+        description: props.description
+    });
 
-    const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value);
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFields({
             ...fields,
             [e.target.name]: e.target.value
-        });
+        })
     }
 
     const handleChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -27,23 +39,25 @@ const FormCreate = () => {
 
     const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         try {
-            const data = await fetch("http://localhost:3000/api/create", {
+            const res = await fetch(`http://localhost:3000/api/edit/${props.id_task}`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(fields)
             });
-            const res = await data.json();
-            setFields({
-                title: "",
-                description: ""
-            });
-            console.log(res);
+
+            if(res.ok){
+                router.push("/dashboard");
+            }
+
         } catch (error) {
             console.log(error)
         }
+
+
 
     }
 
@@ -52,20 +66,22 @@ const FormCreate = () => {
             <div className="flex flex-col w-10/12 mx-auto my-3">
                 <label className="my-2" htmlFor="titleTask">Title task</label>
                 <input
+                    className="bg-transparent"
                     type="text"
                     name="title"
-                    onChange={handleChangeInput}
-                    value={fields.title} />
+                    onChange={handleInputChange}
+                    value={fields.title}
+                />
             </div>
             <div className="flex flex-col w-10/12 mx-auto my-3">
                 <label className="my-2" htmlFor="description">Description task</label>
-                <textarea onChange={handleChangeText} name="description" id="" value={fields.description} />
+                <textarea className="bg-transparent" name="description" onChange={handleChangeText} id="" value={fields.description} />
             </div>
             <div className="flex justify-center items-center my-4">
-                <input className="text-neutral-100 cursor-pointer" type="submit" value="Create task" />
+                <input className="text-neutral-100 cursor-pointer" type="submit" value="Edit task" />
             </div>
         </form>
-    );
-};
+    )
+}
 
-export default FormCreate;
+export default FormEdit;

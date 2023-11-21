@@ -12,7 +12,7 @@ const Navbar = () => {
     if (status == "unauthenticated") {
         return(
             <ul>
-                <Link href="/">home</Link>
+                <Link href="/dashboard">home</Link>
                 <Link href="/register">Register</Link>
                 <button onClick={()=>signIn()}>Sign in</button>
             </ul>
@@ -23,7 +23,7 @@ const Navbar = () => {
         return(
             <ul>
                 <h1>{session.user.user_name}</h1>
-                <Link href="/">home</Link>
+                <Link href="/dashboard">home</Link>
                 <Link href="/register">Register</Link>
                 <button onClick={()=>signOut()}>Sign out</button>
             </ul>

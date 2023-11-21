@@ -22,7 +22,7 @@ async function LoadTask() {
         const res = await fetch("http://localhost:3000/api/read", {
             method: "GET",
             headers: {
-                'Cookie': cookie
+                'Cookie': cookie || ""
             }
         });
         return res.json();
@@ -37,7 +37,7 @@ export default async function Tasks() {
     const dataTasks = await LoadTask();
 
     return (
-        <div>
+        <div className="">
             <ListTasks tasks={dataTasks} />
         </div>
     );
