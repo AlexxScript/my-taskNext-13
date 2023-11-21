@@ -55,7 +55,7 @@ const CreateTaskExpress = () => {
 
     return (
         <form onSubmit={handleSubmit}
-            className="taskContainerForm grid max-w-3xl mx-auto my-[10px]">
+            className="taskContainerForm grid max-w-3xl mx-auto my-[20px]">
 
             <div >
                 <input type="text"
@@ -70,7 +70,7 @@ const CreateTaskExpress = () => {
                     onChange={handleChangeText}
                     value={fields.description}
                     name="description"
-                    className="[grid-area:description] bg-transparent border-2 border-[867E96] rounded-md w-[100%]"
+                    className="[grid-area:description] bg-transparent border-2 border-[#867E96] rounded-md w-[100%]"
                     placeholder="Write a description"
                 />
             </div>

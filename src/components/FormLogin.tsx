@@ -48,10 +48,10 @@ const FormLogin = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div className="flex flex-col">
+                <div className="flex flex-col w-10/12 mx-auto my-3">
                     <label className="my-3" htmlFor="email">Email</label>
                     <input
-                        className="p-1 rounded-sm border-2 border-solid focus:border-sky-500"
+                        className="bg-transparent p-1 rounded-sm border-2 border-solid focus:border-sky-500"
                         type="email"
                         name="email"
                         placeholder="Email"
@@ -60,10 +60,10 @@ const FormLogin = () => {
                         value={fields.email}
                     />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col w-10/12 mx-auto my-3">
                     <label className="my-3" htmlFor="user_name">User name</label>
                     <input
-                        className="p-1 rounded-sm border-2 border-solid focus:border-sky-500"
+                        className="bg-transparent p-1 rounded-sm border-2 border-solid focus:border-sky-500"
                         type="text"
                         name="user_name"
                         placeholder="User Name"
@@ -72,10 +72,10 @@ const FormLogin = () => {
                         value={fields.user_name}
                     />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col w-10/12 mx-auto my-3">
                     <label className="my-3" htmlFor="password">User password</label>
                     <input
-                        className="p-1 rounded-sm border-2 border-solid focus:border-sky-500"
+                        className="bg-transparent p-1 rounded-sm border-2 border-solid focus:border-sky-500"
                         type="password"
                         name="password"
                         placeholder="Write here your password"
@@ -84,8 +84,8 @@ const FormLogin = () => {
                         value={fields.password}
                     />
                 </div>
-                <div className="flex flex-col">
-                    <input type="submit" value="enviar" />
+                <div className="flex flex-col w-10/12 mx-auto my-3">
+                    <input className="text-neutral-100 cursor-pointer" type="submit" value="enviar" />
                 </div>
             </form>
         </div>

@@ -11,7 +11,7 @@ const LayoutDashboard = ({ children }: InterfaceDashboard) => {
         <>
             <SessionAuthProvider>
                 <div className="dashboard grid gap-2">
-                    <div className="navDash [grid-area:menu] h-screen w-[25%] fixed">
+                    <div className="navDash [grid-area:menu] text-[var(--color-font-link)] h-screen w-[25%] fixed">
                         <NavDashboard />
                     </div>
                     <div className="[grid-area:template]">

@@ -52,6 +52,7 @@ const FormCreate = () => {
             <div className="flex flex-col w-10/12 mx-auto my-3">
                 <label className="my-2" htmlFor="titleTask">Title task</label>
                 <input
+                    className="bg-transparent"
                     type="text"
                     name="title"
                     onChange={handleChangeInput}
@@ -59,7 +60,7 @@ const FormCreate = () => {
             </div>
             <div className="flex flex-col w-10/12 mx-auto my-3">
                 <label className="my-2" htmlFor="description">Description task</label>
-                <textarea onChange={handleChangeText} name="description" id="" value={fields.description} />
+                <textarea onChange={handleChangeText} name="description" className="bg-transparent" id="" value={fields.description} />
             </div>
             <div className="flex justify-center items-center my-4">
                 <input className="text-neutral-100 cursor-pointer" type="submit" value="Create task" />
